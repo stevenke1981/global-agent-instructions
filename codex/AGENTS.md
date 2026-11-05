@@ -32,6 +32,37 @@
 - This is a cross-project default. Follow more specific project instructions and necessary CI and security requirements; explicitly explain mandatory review requirements that conflict with this policy and affect delivery.
 - Do not disable security approvals, automatic security review, sandboxes, or required confirmations to reduce code review, and do not expand authorization beyond the original task.
 
+## Portable engineering tools and skills
+- Design for human operators as well as agents: keep CLI or GUI steps, permission handling, and recovery understandable and usable without automation.
+- Before using a toolkit, discover its actual local entry point, read its instructions, and verify the commands and host capabilities available. Use Agent Team Engineering Kit when present and relevant; a mention, download link, or prior report does not prove installation or activation.
+- Reuse portable engineering methods: task routing, interface planning, scoped parallel work when required, change-impact analysis, regression checks, and concise decision/evidence logs. Keep the existing fix-first policy and avoid introducing mandatory extra review rounds.
+- Check the affected files, interfaces, dependencies, and callers before expanding a change. Run checks justified by that impact; report benchmark environments, baselines, commands, and results when making performance claims.
+- Keep model and subagent selection compatible with the active host and explicit model/cost policies. Never claim a model switch, agent launch, review, screenshot, test, or deployment without observed evidence.
+- Preview installation or overwrite effects, preserve existing files, and back up conflicts before authorized replacement. Distinguish source validation, package integrity, filesystem installation, host discovery, and live execution; mark unperformed verification NOT_RUN.
+- Capture recurring evidenced failures as proposed prevention rules. Persist changes to user preferences or memory only with the user's explicit authorization.
+
+## Multi-account identity routing
+Apply this workflow to any website, API, CLI, or connector with multiple possible accounts, including Google services, YouTube, Google Flow, Flow Music, Suno, OpenRouter, and GitHub.
+1. Resolve the intended service, project, environment, resource, and action. Use the user's explicit target and confirmed project bindings first. Treat permissions, resource ownership, and spending restrictions as hard constraints; current login, display names, and historical preference are only hints.
+2. Select the intended identity from a private account registry or other trusted bindings when available. Keep the service account, login provider/method, browser profile, API credential reference, organization/workspace, and channel or other sub-resource distinct. Example identities are never real account assignments.
+3. Independently verify the active identity in the surface that will perform the action. Browser evidence does not verify an API or CLI session, and API evidence does not verify a browser. Use current account/resource identifiers exposed by the service and trusted bindings; selection confidence is not verification.
+4. Before a write, upload, publish, deletion, or paid operation, match the active account and required sub-resource to the intended target. Recheck after account, profile, credential, workspace, or channel changes. If evidence is missing, conflicting, or ambiguous, stop the dependent action, continue safe read-only discovery where useful, and ask only for the unresolved choice.
+5. Account selection grants no additional permission. Honor existing login, publication, payment, credential, and destructive-action approvals; do not repeatedly ask about a binding already confirmed unless the target or evidence changes.
+
+| Service or surface | Required distinction |
+|---|---|
+| Google services | A browser profile, a signed-in Google account, and the target resource are separate identities. |
+| YouTube / Studio | Verify the actual channel ID as well as the managing login; one login may expose multiple channels. |
+| Google Flow / Flow Music | Treat `flow.google.com` and `flowmusic.app` as separate services; verify the active account and applicable project/workspace in each. |
+| Suno | Verify the service account and login method; matching email text or an SSO provider alone is insufficient. |
+| OpenRouter | Verify the credential in use and required account/workspace/organization bindings. A variable name or key-information response alone is insufficient evidence for bindings it does not expose; use trusted mappings or authorized service/management evidence. |
+| GitHub | Match the active CLI/API identity and permissions to the intended repository remote and owner. |
+| Other services | Define equivalent account, resource, and session checks from the service's actual capabilities before acting. |
+
+- Keep account mappings private and out of public repositories and reports. Store credential references, never raw passwords, API keys, cookies, or tokens, in registries and decision logs; redact sensitive identifiers in shared output.
+- Record the selection reason, verification surface, evidence time, and result without secrets. Do not silently turn a guess or a one-off successful action into a permanent preference or cross-service binding.
+- If `multi-account-identity-router` is installed, read its SKILL.md and use its registry, adapters, and verification flow where supported. Otherwise perform the same checks with available tools; do not claim the skill ran or invent a registry.
+
 ## Coding preferences
 
 1. Keep things in one function unless composable or reusable.

@@ -12,3 +12,5 @@ A snapshot of personal instructions for Codex, Claude Code, and Antigravity (AGY
 For AGY, `~/.gemini/AGENTS.md` is one supported global location; see the [Antigravity rules documentation](https://antigravity.google/docs/rules/). Copy a file to its target only after reviewing its instructions and backing up any existing file. Merely cloning this repository does not install or activate any rules. These snapshots are not automatically synchronized with local files.
 
 The instruction files are written in English while retaining the owner's requested Traditional Chinese response style. Final task reports use local timestamps in filenames such as `result_20261105_083000.md`, with a suffix if needed to avoid overwriting. No credentials or application settings are included.
+
+The AGENTS.md files also include portable engineering and multi-account identity-routing rules. See [policy sources and scope](docs/2026-11-05-policy-sources.md) for the two owner-provided conversations and the adoption boundaries.
