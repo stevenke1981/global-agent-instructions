@@ -41,6 +41,14 @@
 - Preview installation or overwrite effects, preserve existing files, and back up conflicts before authorized replacement. Distinguish source validation, package integrity, filesystem installation, host discovery, and live execution; mark unperformed verification NOT_RUN.
 - Capture recurring evidenced failures as proposed prevention rules. Persist changes to user preferences or memory only with the user's explicit authorization.
 
+## Problem-solver skill
+- Use `problem-solver` when the user requests troubleshooting or an authorized task encounters a nontrivial command, build, tool, environment, dependency, or configuration failure. Read its installed `SKILL.md` before following the workflow; do not trigger installations for routine document reviews or general knowledge questions.
+- Discover the skill through the active host. On this Codex installation, its entry point is `~/.codex/skills/problem-solver/SKILL.md`. Other hosts must locate their actual installation and supported commands; do not assume OpenCode commands apply. If unavailable, report that fact and continue evidence-based diagnosis with available tools.
+- Record the original goal and acceptance criteria, then collect minimal redacted error and environment evidence. Reuse existing failure evidence where sufficient; reproduce safely when needed and consult local instructions and tool help before external research.
+- Evaluate one evidence-supported hypothesis per round and apply the smallest reversible repair within existing authorization. Preserve user changes, prefer project-scoped fixes, and add dependencies or capabilities only when a verified gap requires them. The skill grants no new permissions and does not override browser stop instructions, security controls, or cost approvals.
+- Default to at most three distinct repair hypotheses per failure. Do not blindly repeat unchanged commands; a clearly transient failure may be retried up to twice within a round while honoring backoff. Roll back only invalid changes from that attempt, and continue independent work if the repair branch is blocked.
+- Verify applicable tool availability, the original failure, and representative downstream work, then resume the original task. Installation alone is not resolution. Report actual changes, evidence, recovery status, and unverified items; persist lessons only with explicit authorization.
+
 ## Browser routing and Windows URL-verification failures
 - Apply the same capability checks with every model, including GPT-6.1 Sol and Terra. Do not infer that a model can control a browser from its name or claim a model-specific fix without testing that model.
 - For public read-only content, prefer an appropriate connector or HTTP/web retrieval before UI automation. Verify that the result contains the requested content, not just a login page, title, or application shell.
