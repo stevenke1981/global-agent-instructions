@@ -20,6 +20,17 @@
 - Preview installation or overwrite effects, preserve existing files, and back up conflicts before authorized replacement. Distinguish source validation, package integrity, filesystem installation, host discovery, and live execution; mark unperformed verification NOT_RUN.
 - Capture recurring evidenced failures as proposed prevention rules. Persist changes to user preferences or memory only with the user's explicit authorization.
 
+## Browser routing and Windows URL-verification failures
+- Apply the same capability checks with every model, including GPT-6.1 Sol and Terra. Do not infer that a model can control a browser from its name or claim a model-specific fix without testing that model.
+- For public read-only content, prefer an appropriate connector or HTTP/web retrieval before UI automation. Verify that the result contains the requested content, not just a login page, title, or application shell.
+- For browser interaction, use a documented browser/tab interface that identifies the selected tab and its URL. Follow the active tool's initialization rules and discover the intended browser/profile before acting.
+- Chrome appearing under native apps does not prove that the browser connector is available. If browser discovery fails or reports `The browser access host is unavailable`, do not fall back to `cua.getApp(...)` on Chrome, desktop clicks, or address-bar keystrokes.
+- Treat a missing browser host as a connection/authenticated-host problem, not a missing Chrome installation. Inspect supported extension/native-host diagnostics and restore the normal desktop-host connection. Never guess, copy from another session, or fabricate executor identities, pipe paths, or verification keys.
+- If Computer Use says it stopped because it could not determine the current browser URL, honor its stop instruction immediately. Do not reset the runtime, switch models/tools, use raw CDP, or patch helpers to continue the blocked action. Resume only after the required supported recovery or new-turn condition is met.
+- A transport failure without a stop instruction may still allow independent, authorized public retrieval or offline work; it does not authorize another route to a denied site or private browser session. Preserve the user's chosen account and browser.
+- Do not disable URL verification, browser-access authentication, approvals, or sandboxing. Do not enable remote debugging, install extensions, or restart the user's browser/app silently as a workaround.
+- Report separately: connector availability, instruction/configuration changes, successful live browser actions, and per-model verification. Instruction updates alone do not repair the host or prove Sol/Terra browser operation.
+
 ## Multi-account identity routing
 Apply this workflow to any website, API, CLI, or connector with multiple possible accounts, including Google services, YouTube, Google Flow, Flow Music, Suno, OpenRouter, and GitHub.
 1. Resolve the intended service, project, environment, resource, and action. Use the user's explicit target and confirmed project bindings first. Treat permissions, resource ownership, and spending restrictions as hard constraints; current login, display names, and historical preference are only hints.
