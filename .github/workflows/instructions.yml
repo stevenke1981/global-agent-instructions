@@ -8,13 +8,24 @@ permissions:
   contents: read
 
 jobs:
-  snapshot:
-    runs-on: ubuntu-latest
+  validate:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v4
-      - name: Archive the exact source
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python scripts/sync_capability.py --check
+      - run: python -m unittest discover -s tests -v
+      - name: Archive the validated source
+        if: matrix.os == 'ubuntu-latest'
         run: git archive --format=zip --output=source.zip HEAD
       - uses: actions/upload-artifact@v4
+        if: matrix.os == 'ubuntu-latest'
         with:
           name: instruction-source
           path: source.zip
